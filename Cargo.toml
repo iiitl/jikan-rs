@@ -1,0 +1,18 @@
+[package]
+name = "jikan-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = "0.12.12"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+thiserror = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+url = "2.4"
+serde_json = "1.0.137"
+serial_test = "3.2.0"
+
+[dev-dependencies]
+tokio-test = "0.4"
+wiremock = "0.6.2"
