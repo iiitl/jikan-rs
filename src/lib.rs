@@ -5,7 +5,6 @@ use thiserror::Error;
 
 pub mod anime;
 pub mod manga;
-pub mod seasons;
 pub mod common;
 
 const API_BASE_URL: &str = "https://api.jikan.moe/v4";
