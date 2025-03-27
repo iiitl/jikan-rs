@@ -320,7 +320,10 @@ impl JikanClient {
         self.get(&format!("/manga/{}/reviews{}", id, query)).await
     }
 
-    pub async fn get_manga_relations(&self, id: i32) -> Result<MangaResponse<Vec<Relation>>, JikanError> {
+    pub async fn get_manga_relations(
+        &self,
+        id: i32,
+    ) -> Result<MangaResponse<Vec<Relation>>, JikanError> {
         self.get(&format!("/manga/{}/relations", id)).await
     }
 
