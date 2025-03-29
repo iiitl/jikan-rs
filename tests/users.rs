@@ -5,7 +5,7 @@ mod common;
 
 #[tokio::test]
 #[serial]
-async fn get_user_full(){
+async fn get_user_full() {
     let client = JikanClient::new();
     let result = client.get_user_full("InSaiyan__").await; // github.com/In-Saiyan
     assert!(result.is_ok());
@@ -14,7 +14,7 @@ async fn get_user_full(){
 
 #[tokio::test]
 #[serial]
-async fn get_user(){
+async fn get_user() {
     let client = JikanClient::new();
     let result = client.get_user("InSaiyan__").await; //  github.com/In-Saiyan
     assert!(result.is_ok());
@@ -23,7 +23,7 @@ async fn get_user(){
 
 #[tokio::test]
 #[serial]
-async fn get_users(){
+async fn get_users() {
     let client = JikanClient::new();
     let result = client.get_users().await;
     assert!(result.is_ok());
@@ -32,7 +32,7 @@ async fn get_users(){
 
 #[tokio::test]
 #[serial]
-async fn get_user_by_id(){
+async fn get_user_by_id() {
     let client = JikanClient::new();
     let result = client.get_user_by_id(15847568).await;
     assert!(result.is_ok());
@@ -41,7 +41,7 @@ async fn get_user_by_id(){
 
 #[tokio::test]
 #[serial]
-async fn get_user_stats(){
+async fn get_user_stats() {
     let client = JikanClient::new();
     let result = client.get_user_stats("InSaiyan__").await; //  github.com/In-Saiyan
     assert!(result.is_ok());

@@ -1,6 +1,10 @@
 // anime.rs
 use crate::{
+    character::*,
     common::{DateRange, Images, Pagination},
+    misc::*,
+    people::*,
+    users::*,
     JikanClient, JikanError,
 };
 use serde::{Deserialize, Serialize};
@@ -38,14 +42,6 @@ pub struct AnimeCharacter {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Character {
-    pub mal_id: i32,
-    pub url: String,
-    pub images: Images,
-    pub name: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AnimeStaff {
     pub data: Vec<StaffMember>,
 }
@@ -54,14 +50,6 @@ pub struct AnimeStaff {
 pub struct StaffMember {
     pub person: Person,
     pub positions: Vec<String>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Person {
-    pub mal_id: i32,
-    pub url: String,
-    pub images: Images,
-    pub name: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -283,53 +271,14 @@ pub struct AnimeThemes {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ExternalLink {
-    pub name: String,
-    pub url: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AnimeNews {
     pub data: Vec<NewsItem>,
     pub pagination: Pagination,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct NewsItem {
-    pub mal_id: i32,
-    pub url: String,
-    pub title: String,
-    pub date: String,
-    pub author_username: String,
-    pub author_url: String,
-    pub forum_url: String,
-    pub images: Images,
-    pub comments: i32,
-    pub excerpt: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AnimeForum {
     pub data: Vec<ForumTopic>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ForumTopic {
-    pub mal_id: i32,
-    pub url: String,
-    pub title: String,
-    pub date: String,
-    pub author_username: String,
-    pub author_url: String,
-    pub comments: i32,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum ForumFilter {
-    All,
-    Episode,
-    Other,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -349,76 +298,9 @@ pub struct MoreInfo {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Recommendation {
-    pub entry: RecommendationEntry,
-    pub votes: i32,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct RecommendationEntry {
-    pub mal_id: i32,
-    pub url: String,
-    pub images: Images,
-    pub title: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AnimeUserUpdates {
     pub data: Vec<UserUpdate>,
     pub pagination: Pagination,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct UserUpdate {
-    pub user: User,
-    pub score: Option<i32>,
-    pub status: String,
-    pub episodes_seen: Option<i32>,
-    pub episodes_total: Option<i32>,
-    pub date: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct User {
-    pub username: String,
-    pub url: String,
-    pub images: Images,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Review {
-    pub mal_id: i32,
-    pub url: String,
-    #[serde(rename = "type")]
-    pub type_: String,
-    pub reactions: Option<ReviewReactions>,
-    pub date: String,
-    pub review: String,
-    pub score: i32,
-    pub tags: Vec<String>,
-    pub is_spoiler: bool,
-    pub is_preliminary: bool,
-    pub episodes_watched: Option<i32>,
-    pub user: ReviewUser,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ReviewReactions {
-    pub overall: i32,
-    pub nice: i32,
-    pub love_it: i32,
-    pub funny: i32,
-    pub confusing: i32,
-    pub informative: i32,
-    pub well_written: i32,
-    pub creative: i32,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ReviewUser {
-    pub url: String,
-    pub username: String,
-    pub images: Images,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -430,28 +312,4 @@ pub struct AnimeStatistics {
     pub plan_to_watch: i32,
     pub total: i32,
     pub scores: Vec<Score>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Score {
-    pub score: i32,
-    pub votes: i32,
-    pub percentage: f32,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Relation {
-    pub relation: String,
-    pub entry: Vec<RelatedEntry>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct RelatedEntry {
-    pub mal_id: i32,
-    pub type_: String,
-    pub name: String,
-    pub url: String,
-}
-pub struct RelationResponse {
-    pub data: Vec<Relation>,
 }
