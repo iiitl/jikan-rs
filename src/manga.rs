@@ -26,7 +26,7 @@ pub struct Manga {
     pub status: Option<String>,
     pub score: Option<f32>,
     pub synopsis: Option<String>,
-    pub published: DateRange,
+    pub published: Option<DateRange>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
