@@ -7,7 +7,7 @@ mod common;
 #[serial]
 async fn get_user_full(){
     let client = JikanClient::new();
-    let result = client.get_user_full("InSaiyan__").await; // thats me
+    let result = client.get_user_full("InSaiyan__").await; // github.com/In-Saiyan
     assert!(result.is_ok());
     wait_between_tests().await;
 }
@@ -16,7 +16,7 @@ async fn get_user_full(){
 #[serial]
 async fn get_user(){
     let client = JikanClient::new();
-    let result = client.get_user("InSaiyan__").await; // thats me
+    let result = client.get_user("InSaiyan__").await; //  github.com/In-Saiyan
     assert!(result.is_ok());
     wait_between_tests().await;
 }
@@ -43,7 +43,7 @@ async fn get_user_by_id(){
 #[serial]
 async fn get_user_stats(){
     let client = JikanClient::new();
-    let result = client.get_user_stats("InSaiyan__").await; // thats me
+    let result = client.get_user_stats("InSaiyan__").await; //  github.com/In-Saiyan
     assert!(result.is_ok());
     wait_between_tests().await;
 }
