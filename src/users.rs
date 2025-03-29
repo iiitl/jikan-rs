@@ -1,7 +1,7 @@
 //user.rs
 use crate::{
-    JikanClient, JikanError,
     common::{Images, Pagination},
+    JikanClient, JikanError,
 };
 use serde::{Deserialize, Serialize};
 

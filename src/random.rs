@@ -1,5 +1,5 @@
 //random.rs
-use crate::{JikanClient, JikanError, anime::*, character::*, manga::*, people::*, users::*};
+use crate::{anime::*, character::*, manga::*, people::*, users::*, JikanClient, JikanError};
 
 impl JikanClient {
     pub async fn get_random_anime(&self) -> Result<AnimeResponse<Anime>, JikanError> {

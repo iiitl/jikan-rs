@@ -1,11 +1,11 @@
 // anime.rs
 use crate::{
-    JikanClient, JikanError,
     character::*,
     common::{DateRange, Images, Pagination},
     misc::*,
     people::*,
     users::*,
+    JikanClient, JikanError,
 };
 use serde::{Deserialize, Serialize};
 

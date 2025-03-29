@@ -1,9 +1,9 @@
 use crate::{
-    JikanClient, JikanError,
     character::*,
     common::{DateRange, Images, Pagination},
     misc::*,
     users::*,
+    JikanClient, JikanError,
 };
 use serde::{Deserialize, Serialize};
 
