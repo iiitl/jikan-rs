@@ -1,4 +1,6 @@
-use crate::{JikanClient, JikanError};
+use crate::{
+    common::{DateRange, Images, Pagination},
+    JikanClient, JikanError};
 
 use serde::{Deserialize, Serialize};
 
