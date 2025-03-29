@@ -5,6 +5,7 @@ use thiserror::Error;
 
 pub mod anime;
 pub mod character;
+pub mod clubs;
 pub mod common;
 pub mod manga;
 pub mod misc;
