@@ -27,7 +27,7 @@ pub struct Anime {
     pub status: Option<String>,
     pub score: Option<f32>,
     pub synopsis: Option<String>,
-    pub aired: DateRange,
+    pub aired: Option<DateRange>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
