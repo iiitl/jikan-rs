@@ -4,8 +4,14 @@ use std::time::Duration;
 use thiserror::Error;
 
 pub mod anime;
+pub mod character;
+pub mod clubs;
 pub mod common;
 pub mod manga;
+pub mod misc;
+pub mod people;
+pub mod random;
+pub mod users;
 pub mod genre;
 
 const API_BASE_URL: &str = "https://api.jikan.moe/v4";
